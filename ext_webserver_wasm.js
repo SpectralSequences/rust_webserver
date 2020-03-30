@@ -197,7 +197,7 @@ class Resolution {
         wasm.__wbg_resolution_free(ptr);
     }
     /**
-    * @param {any} f
+    * @param {Function} f
     * @returns {Resolution}
     */
     static new(f) {
@@ -232,7 +232,7 @@ class Sseq {
         wasm.__wbg_sseq_free(ptr);
     }
     /**
-    * @param {any} f
+    * @param {Function} f
     * @returns {Sseq}
     */
     static new(f) {
@@ -351,7 +351,7 @@ async function load(module, imports) {
 async function init(input) {
     if (typeof input === 'undefined') {
         let src;
-        if (document === undefined) {
+        if (typeof document === 'undefined') {
             src = location.href;
         } else {
             src = document.currentScript.src;
@@ -371,7 +371,7 @@ async function init(input) {
         var ret = getObject(arg0);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbg_call_283f884995dd89e7 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbg_call_1ad0eb4a7ab279eb = function(arg0, arg1, arg2) {
         try {
             var ret = getObject(arg0).call(getObject(arg1), getObject(arg2));
             return addHeapObject(ret);
